@@ -6,7 +6,7 @@
 function makeGrid() {
 	var table, headLine;
 	
-	headLine = $('h2)[2];
+	headLine = $('h2')[2];
 	
 	table = $('#pixelCanvas');
 	table.append('<tr><td>Cell 1</td></tr>');
