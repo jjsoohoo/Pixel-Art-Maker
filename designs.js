@@ -13,6 +13,6 @@ function makeGrid() {
 	
 	headLine.on('click', function(event) {
 		
-	alert("fu");
+	alert("test");
 	});
 };
