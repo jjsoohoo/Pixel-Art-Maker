@@ -20,14 +20,22 @@ $('#clear').click(function() {  // when 'reset' button is clicked
 	$('#pixelCanvas').empty();  // clear all child elements from table
 	$('#inputHeight').val('1');  // reset input boxes to '1'
 	$('#inputWeight').val('1');
+	$('#colorPicker').val('#000000');  // reset to default color
 });
+
 
 function makeGrid(height,width) {
 	for (let i = 0; i < height; i++) {
 		$('#pixelCanvas').append($('<tr></tr>'));  // add specified number of rows
 		
 		for (let j = 0; j < width; j++) {
-			$('tr').last().append($('<td>'+ i + ',' + j + '</td>'));  // add cells to the last row
+			$('tr').last().append($('<td></td>'));  // add cells to the last row
 		};
-	};
+	};	
+	
+$('td').on('click', function() {
+	const newColor = $('#colorPicker').val();  // get color value from color picker
+	$(this).css('background-color', newColor);  // set clicked cell to color variable
+});	
+	
 };
