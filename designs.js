@@ -6,6 +6,8 @@
 $('#submit').click(function(event) {  // when 'submit' button is clicked
 	event.preventDefault();  // prevent form from sending data to server
 	
+	$('#clear').attr('disabled', false);  // when clicked, enable button
+	
 	while ($('#pixelCanvas').children().length != 0) {  // if table is not empty...
 		$('#pixelCanvas').empty();  // clear all child elements from table
 	};
@@ -21,8 +23,8 @@ $('#clear').click(function() {  // when 'reset' button is clicked
 	$('#inputHeight').val('1');  // reset input boxes to '1'
 	$('#inputWeight').val('1');
 	$('#colorPicker').val('#000000');  // reset to default color
+	$('#clear').attr('disabled', true);  // disable button
 });
-
 
 function makeGrid(height,width) {
 	for (let i = 0; i < height; i++) {
