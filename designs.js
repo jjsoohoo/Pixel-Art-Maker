@@ -23,7 +23,6 @@ $('#clear').click(function() {  // when 'reset' button is clicked
 });
 
 function makeGrid(height,width) {
-	
 	for (let i = 0; i < height; i++) {
 		$('#pixelCanvas').append($('<tr></tr>'));  // add specified number of rows
 		
