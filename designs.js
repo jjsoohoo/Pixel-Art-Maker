@@ -3,16 +3,24 @@
 
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid() {
-	var table, headLine;
-	
-	headLine = $('h2')[2];
-	
-	table = $('#pixelCanvas');
-	table.append('<tr><td>Cell 1</td></tr>');
-	
-	headLine.on('click', function(event) {
+var height, width;
 		
-	alert("test");
-	});
+$('#submit').click(function() {
+	height = $('#inputHeight').val();
+	width = $('#inputWeight').val();
+	makeGrid();
+});
+		
+
+function makeGrid() {
+	
+	for (let i = 0; i < height; i++) {
+		$('#pixelCanvas').append($('<tr></tr>'));
+		
+		for (let j = 0; j < width; j++) {
+			$('tr').last().append($('<td></td>'));
+		};
+		
+	};
+	
 };
