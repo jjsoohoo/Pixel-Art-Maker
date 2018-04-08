@@ -33,11 +33,25 @@ function makeGrid(height,width) {
 		for (let j = 0; j < width; j++) {
 			$('tr').last().append($('<td></td>'));  // add cells to the last row
 		};
-	};	
+	};		
+colorDrag();
+};
+
+function colorDrag() {
+	var mouseDown;
 	
-$('td').on('click', function() {
-	const newColor = $('#colorPicker').val();  // get color value from color picker
-	$(this).css('background-color', newColor);  // set clicked cell to color variable
-});	
+	$('td').on('mousedown', function() {  // if mousedown, set variable to true
+		mouseDown = true;
+	});
 	
+	$('td').on('mouseup', function() {  // if mouseup, set variable to false
+		mouseDown = false;
+	});
+
+	$('td').on('mousemove', function() {  // while mouse is moving...
+		if (mouseDown) {             // and if mousedown, then...
+			const newColor = $('#colorPicker').val();  // get color value from color picker
+			$(this).css('background-color', newColor);  // set clicked cell to color variable
+		};
+	});
 };
